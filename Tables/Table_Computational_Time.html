@@ -1,0 +1,230 @@
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f5f5f5;
+}
+
+.method-col {
+    text-align: left;
+    font-weight: bold;
+}
+
+.section-header {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.table-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.table-description {
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+</style>
+
+<div class="table-title">
+    Computational Time for Base Line (CSI) and Gaussian Process Kernels with Varying Error Percentages
+</div>
+<div class="table-description">
+    Values are presented as mean ± standard deviation in seconds
+</div>
+
+<table>
+    <tr>
+        <th>Treatment Methods</th>
+        <th colspan="3">Error Percentage</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>10%</th>
+        <th>20%</th>
+        <th>30%</th>
+    </tr>
+    <tr class="section-header">
+        <td colspan="4">Total Time (s)</td>
+    </tr>
+    <tr>
+        <td class="method-col">CSI</td>
+        <td>0.002 ± 0.001</td>
+        <td>0.004 ± 0.001</td>
+        <td>0.006 ± 0.001</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Linear)</td>
+        <td>1.020 ± 0.488</td>
+        <td>0.826 ± 0.346</td>
+        <td>0.599 ± 0.220</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Periodic)</td>
+        <td>3.052 ± 1.916</td>
+        <td>2.493 ± 1.634</td>
+        <td>1.640 ± 1.145</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Brownian)</td>
+        <td>0.557 ± 0.239</td>
+        <td>0.468 ± 0.180</td>
+        <td>0.343 ± 0.113</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Exponential)</td>
+        <td>2.438 ± 1.454</td>
+        <td>1.925 ± 1.082</td>
+        <td>1.309 ± 0.704</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Matérn 3/2)</td>
+        <td>1.773 ± 0.832</td>
+        <td>1.384 ± 0.665</td>
+        <td>0.925 ± 0.405</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Matérn 5/2)</td>
+        <td>1.512 ± 0.725</td>
+        <td>1.244 ± 0.586</td>
+        <td>0.868 ± 0.389</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (RBF)</td>
+        <td>1.521 ± 0.719</td>
+        <td>1.295 ± 0.635</td>
+        <td>0.902 ± 0.409</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (RQ)</td>
+        <td>4.012 ± 1.671</td>
+        <td>3.313 ± 1.439</td>
+        <td>2.373 ± 1.030</td>
+    </tr>
+    <tr class="section-header">
+        <td colspan="4">Training Time (s)</td>
+    </tr>
+    <tr>
+        <td class="method-col">CSI</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Linear)</td>
+        <td>1.002 ± 0.488</td>
+        <td>0.790 ± 0.345</td>
+        <td>0.558 ± 0.220</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Periodic)</td>
+        <td>3.031 ± 1.916</td>
+        <td>2.454 ± 1.634</td>
+        <td>1.596 ± 1.145</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Brownian)</td>
+        <td>0.540 ± 0.238</td>
+        <td>0.433 ± 0.180</td>
+        <td>0.304 ± 0.112</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Exponential)</td>
+        <td>2.418 ± 1.454</td>
+        <td>1.887 ± 1.082</td>
+        <td>1.266 ± 0.704</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Matérn 3/2)</td>
+        <td>1.752 ± 0.832</td>
+        <td>1.345 ± 0.664</td>
+        <td>0.882 ± 0.405</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Matérn 5/2)</td>
+        <td>1.492 ± 0.725</td>
+        <td>1.207 ± 0.586</td>
+        <td>0.825 ± 0.389</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (RBF)</td>
+        <td>1.498 ± 0.719</td>
+        <td>1.254 ± 0.635</td>
+        <td>0.853 ± 0.409</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (RQ)</td>
+        <td>3.990 ± 1.671</td>
+        <td>3.272 ± 1.439</td>
+        <td>2.327 ± 1.030</td>
+    </tr>
+    <tr class="section-header">
+        <td colspan="4">Inference Time (s)</td>
+    </tr>
+    <tr>
+        <td class="method-col">CSI</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Linear)</td>
+        <td>0.018 ± 0.011</td>
+        <td>0.036 ± 0.014</td>
+        <td>0.041 ± 0.014</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Periodic)</td>
+        <td>0.021 ± 0.011</td>
+        <td>0.039 ± 0.015</td>
+        <td>0.043 ± 0.014</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Brownian)</td>
+        <td>0.018 ± 0.011</td>
+        <td>0.035 ± 0.015</td>
+        <td>0.039 ± 0.013</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Exponential)</td>
+        <td>0.020 ± 0.012</td>
+        <td>0.039 ± 0.015</td>
+        <td>0.043 ± 0.015</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Matérn 3/2)</td>
+        <td>0.021 ± 0.011</td>
+        <td>0.039 ± 0.014</td>
+        <td>0.044 ± 0.014</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (Matérn 5/2)</td>
+        <td>0.020 ± 0.011</td>
+        <td>0.038 ± 0.014</td>
+        <td>0.042 ± 0.014</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (RBF)</td>
+        <td>0.023 ± 0.011</td>
+        <td>0.041 ± 0.013</td>
+        <td>0.049 ± 0.015</td>
+    </tr>
+    <tr>
+        <td class="method-col">GP (RQ)</td>
+        <td>0.021 ± 0.012</td>
+        <td>0.040 ± 0.015</td>
+        <td>0.046 ± 0.016</td>
+    </tr>
+</table>
