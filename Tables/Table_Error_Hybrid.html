@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .method-col {
+            text-align: left;
+            font-weight: bold;
+        }
+        caption {
+            padding: 10px;
+            font-style: italic;
+        }
+        .super {
+            vertical-align: super;
+            font-size: smaller;
+        }
+        .error-percent {
+            font-weight: bold;
+            background-color: #e6e6e6;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Average MSE (ms²) and MAE (ms) for varying error percentage and duration for the hybrid methods used to treat the time series. (The ||MAE||₂ computation does not include variable duration cases. The table is sorted in descending order by ||MAE||₂)</caption>
+        <thead>
+            <tr>
+                <th rowspan="4">Methods/Noisy</th>
+                <th rowspan="4">||MAE||₂</th>
+                <th colspan="10" class="error-percent">p = 10%</th>
+                <th colspan="10" class="error-percent">p = 20%</th>
+                <th colspan="10" class="error-percent">p = 30%</th>
+            </tr>
+            <tr>
+                <th colspan="2">1s</th>
+                <th colspan="2">3s</th>
+                <th colspan="2">5s</th>
+                <th colspan="2">7s</th>
+                <th colspan="2">Variable Duration</th>
+                <th colspan="2">1s</th>
+                <th colspan="2">3s</th>
+                <th colspan="2">5s</th>
+                <th colspan="2">7s</th>
+                <th colspan="2">Variable Duration</th>
+                <th colspan="2">1s</th>
+                <th colspan="2">3s</th>
+                <th colspan="2">5s</th>
+                <th colspan="2">7s</th>
+                <th colspan="2">Variable Duration</th>
+            </tr>
+            <tr>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+                <th colspan="2">Average</th>
+            </tr>
+            <tr>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+                <th>MSE</th>
+                <th>MAE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="method-col">RQ × Brownian</td>
+                <td>20.07</td>
+                <td>78.89</td>
+                <td>2.01</td>
+                <td>124.28</td>
+                <td>2.52</td>
+                <td>154.77</td>
+                <td>2.82</td>
+                <td>182.51</td>
+                <td>3.06</td>
+                <td>152.31</td>
+                <td>2.8</td>
+                <td>166.03</td>
+                <td>4.13</td>
+                <td>252.79</td>
+                <td>5.08</td>
+                <td>318.22</td>
+                <td>5.73</td>
+                <td>361.88</td>
+                <td>6.13</td>
+                <td>306.06</td>
+                <td>5.61</td>
+                <td>270</td>
+                <td>6.44</td>
+                <td>389.21</td>
+                <td>7.74</td>
+                <td>484.46</td>
+                <td>8.64</td>
+                <td>551.94</td>
+                <td>9.26</td>
+                <td>459.28</td>
+                <td>8.42</td>
+            </tr>
+            <tr>
+                <td class="method-col">RQ × Exp</td>
+                <td>18.84</td>
+                <td>61.67</td>
+                <td>1.73</td>
+                <td>105.86</td>
+                <td>2.27</td>
+                <td>142.31</td>
+                <td>2.66</td>
+                <td>179.91</td>
+                <td>2.99</td>
+                <td>142.01</td>
+                <td>2.64</td>
+                <td>129.76</td>
+                <td>3.55</td>
+                <td>217.42</td>
+                <td>4.61</td>
+                <td>297.16</td>
+                <td>5.43</td>
+                <td>359.23</td>
+                <td>6.01</td>
+                <td>286.77</td>
+                <td>5.32</td>
+                <td>213.78</td>
+                <td>5.55</td>
+                <td>341.27</td>
+                <td>7.07</td>
+                <td>456.09</td>
+                <td>8.22</td>
+                <td>548.73</td>
+                <td>9.1</td>
+                <td>431.6</td>
+                <td>7.99</td>
+            </tr>
+            <tr>
+                <td class="method-col">RQ + Brownian</td>
+                <td>18.09</td>
+                <td>58.01</td>
+                <td>1.67</td>
+                <td>99.16</td>
+                <td>2.2</td>
+                <td>131.12</td>
+                <td>2.55</td>
+                <td>162.67</td>
+                <td>2.85</td>
+                <td>129.82</td>
+                <td>2.53</td>
+                <td>122.48</td>
+                <td>3.44</td>
+                <td>203.55</td>
+                <td>4.47</td>
+                <td>272.66</td>
+                <td>5.21</td>
+                <td>323.96</td>
+                <td>5.72</td>
+                <td>262.51</td>
+                <td>5.09</td>
+                <td>203.15</td>
+                <td>5.39</td>
+                <td>318.68</td>
+                <td>6.84</td>
+                <td>418.83</td>
+                <td>7.9</td>
+                <td>494.76</td>
+                <td>8.67</td>
+                <td>395.72</td>
+                <td>7.66</td>
+            </tr>
+            <tr>
+                <td class="method-col">RQ × Periodic</td>
+                <td>17.96</td>
+                <td>57.41</td>
+                <td>1.65</td>
+                <td>98.52</td>
+                <td>2.19</td>
+                <td>128.49</td>
+                <td>2.53</td>
+                <td>158.32</td>
+                <td>2.81</td>
+                <td>127.29</td>
+                <td>2.51</td>
+                <td>122.17</td>
+                <td>3.42</td>
+                <td>202.56</td>
+                <td>4.45</td>
+                <td>269.36</td>
+                <td>5.18</td>
+                <td>316.33</td>
+                <td>5.65</td>
+                <td>259.18</td>
+                <td>5.06</td>
+                <td>202.8</td>
+                <td>5.39</td>
+                <td>316.29</td>
+                <td>6.82</td>
+                <td>412.54</td>
+                <td>7.84</td>
+                <td>485.2</td>
+                <td>8.58</td>
+                <td>389.83</td>
+                <td>7.6</td>
+            </tr>
+            <tr>
+                <td class="method-col">RQ × RBF</td>
+                <td>17.93</td>
+                <td>58.39</td>
+                <td>1.66</td>
+                <td>99.14</td>
+                <td>2.2</td>
+                <td>128.35</td>
+                <td>2.53</td>
+                <td>156.54</td>
+                <td>2.8</td>
+                <td>126.89</td>
+                <td>2.51</td>
+                <td>123.16</td>
+                <td>3.43</td>
+                <td>203.07</td>
+                <td>4.47</td>
+                <td>266.74</td>
+                <td>5.17</td>
+                <td>311.68</td>
+                <td>5.62</td>
+                <td>256.51</td>
+                <td>5.05</td>
+                <td>204.16</td>
+                <td>5.39</td>
+                <td>316.53</td>
+                <td>6.84</td>
+                <td>408.74</td>
+                <td>7.82</td>
+                <td>476.66</td>
+                <td>8.52</td>
+                <td>386.54</td>
+                <td>7.59</td>
+            </tr>
+            <tr>
+                <td class="method-col">RQ + Exp</td>
+                <td>17.82</td>
+                <td>57.44</td>
+                <td>1.67</td>
+                <td>97.4</td>
+                <td>2.18</td>
+                <td>126.49</td>
+                <td>2.52</td>
+                <td>154.85</td>
+                <td>2.79</td>
+                <td>125.28</td>
+                <td>2.5</td>
+                <td>120</td>
+                <td>3.42</td>
+                <td>198.56</td>
+                <td>4.42</td>
+                <td>261.82</td>
+                <td>5.12</td>
+                <td>307.34</td>
+                <td>5.59</td>
+                <td>252.52</td>
+                <td>5.02</td>
+                <td>201.37</td>
+                <td>5.41</td>
+                <td>310.42</td>
+                <td>6.78</td>
+                <td>402.05</td>
+                <td>7.76</td>
+                <td>470.96</td>
+                <td>8.47</td>
+                <td>380.81</td>
+                <td>7.54</td>
+            </tr>
+            <tr>
+                <td class="method-col">RQ + Periodic</td>
+                <td>17.55</td>
+                <td><b>55.59</b></td>
+                <td>1.63</td>
+                <td>94.55</td>
+                <td>2.16</td>
+                <td>121.82</td>
+                <td>2.48</td>
+                <td><b>147.37</b></td>
+                <td><b>2.73</b></td>
+                <td><b>120.18</b></td>
+                <td><b>2.45</b></td>
+                <td>117.61</td>
+                <td>3.37</td>
+                <td>193.93</td>
+                <td>4.38</td>
+                <td>252.27</td>
+                <td>5.05</td>
+                <td>294.09</td>
+                <td>5.5</td>
+                <td>243.51</td>
+                <td>4.94</td>
+                <td>194.35</td>
+                <td>5.29</td>
+                <td>302.91</td>
+                <td>6.71</td>
+                <td>388.57</td>
+                <td>7.66</td>
+                <td>449.74</td>
+                <td>8.32</td>
+                <td>368.3</td>
+                <td>7.44</td>
+            </tr>
+            <tr>
+                <td class="method-col">RQ + RBF</td>
+                <td><b>17.42</b></td>
+                <td>55.71</td>
+                <td><b>1.63</b></td>
+                <td><b>94.13</b></td>
+                <td><b>2.14</b></td>
+                <td><b>121.31</b></td>
+                <td><b>2.47</b></td>
+                <td>148.41</td>
+                <td><b>2.73</b></td>
+                <td>120.33</td>
+                <td><b>2.45</b></td>
+                <td><b>117.17</b></td>
+                <td><b>3.36</b></td>
+                <td><b>190.98</b></td>
+                <td><b>4.33</b></td>
+                <td><b>249.79</b></td>
+                <td><b>5.01</b></td>
+                <td><b>291.41</b></td>
+                <td><b>5.45</b></td>
+                <td><b>240.84</b></td>
+                <td><b>4.9</b></td>
+                <td><b>193.78</b></td>
+                <td><b>5.27</b></td>
+                <td><b>299.45</b></td>
+                <td><b>6.65</b></td>
+                <td><b>384.2</b></td>
+                <td><b>7.59</b></td>
+                <td><b>444.37</b></td>
+                <td><b>8.25</b></td>
+                <td><b>364.3</b></td>
+                <td><b>7.38</b></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
